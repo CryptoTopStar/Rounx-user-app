@@ -3,12 +3,12 @@ import React from "react";
 
 export default function Skills() {
   return (
-    <Box>
-      <Typography>
+    <Box style={{ margin: '5% 30%' }}>
+      <Typography marginBottom='20px'>
         Submit freelancer application
       </Typography>
       <Paper>
-        <Typography>Skills</Typography>
+        <Typography >Skills</Typography>
         <Typography>Step 1 of 6</Typography>
         <Divider />
         <Select>

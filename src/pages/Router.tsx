@@ -7,6 +7,7 @@ import PrivacyTerms from "./PrivacyTerms";
 import RonuxAdmin from "./RonuxAdmin";
 import SignIn from "./SignIn";
 import SignUp from "./SignUp";
+import Skills from "./freelancer/Skills";
 import UserConsole from "./UserConsole";
 import EmailVerification from "./EmailVerification";
 import ResetPassword from "./ResetPassword";
@@ -110,8 +111,8 @@ export default function Router() {
           element: <JobDetails />
         },
         {
-          path: "/reports",
-          element: <ReviewReport />
+          path: "/apply-freelancer",
+          element: <Skills />
         },
       ],
     },
