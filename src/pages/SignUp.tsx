@@ -1,9 +1,9 @@
 import React from "react";
 import { useFormik } from "formik";
 import * as yup from "yup";
-import { CustomForm, FormBox, BlueButton } from "../commonStyle/CommonStyle";
 import {
   TextField,
+  Button,
   Typography,
   FormControl,
   Select,
@@ -11,8 +11,9 @@ import {
   InputAdornment,
   IconButton,
   Box,
-  Button
+  Divider
 } from "@mui/material";
+import { BlueButton, CustomForm, FormBox } from "./../commonStyle/CommonStyle";
 import { Visibility, VisibilityOff } from "@mui/icons-material";
 import { useNavigate } from "react-router-dom";
 
@@ -31,10 +32,10 @@ const validationSchema = yup.object({
       is: (value: string) => (value && value.length > 0 ? true : false),
       then: yup.string().oneOf([yup.ref("password")], "Passwords do not match"),
     })
-    .required("This field is required")
+    .required("This field is required"),
 });
 
-export default function ForgotPassword() {
+export default function SignUp() {
   const [language, setLanguage] = React.useState("English");
   const [showPassword, setShowPassword] = React.useState(false);
   const navigate = useNavigate();
@@ -47,7 +48,7 @@ export default function ForgotPassword() {
     },
     validationSchema: validationSchema,
     onSubmit: (values) => {
-      navigate("/verification-email");
+      navigate("/sign-in");
     },
   });
 
@@ -77,8 +78,17 @@ export default function ForgotPassword() {
             marginBottom: "20px",
           }}
         >
-          Reset Password
+          <span>Create </span>
+          <span style={{ fontWeight: "bold" }}>Rounx </span>
+          <span>account </span>
         </Typography>
+        <Box>
+          <TextField label="First name" />
+          <TextField label="Last name" style={{ float: 'right' }} />
+        </Box>
+        <TextField label="Birthday" />
+        <TextField label="Country/Region" />
+        <Divider />
         <TextField
           fullWidth
           id="email"
@@ -92,7 +102,6 @@ export default function ForgotPassword() {
         <TextField label="Enter code" />
         <Box>
           <TextField
-
             id="password"
             name="password"
             label="Set password"

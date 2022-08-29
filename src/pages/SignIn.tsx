@@ -6,8 +6,7 @@ import {
   Button,
   Typography,
   FormControl,
-  Select,
-  MenuItem,
+  Box,
   InputAdornment,
   IconButton,
 } from "@mui/material";
@@ -69,7 +68,7 @@ export default function SignIn() {
           }}
         >
           <span>Sign in </span>
-          <span style={{ fontWeight: "bold" }}>Rounx Admin</span>
+          <span style={{ fontWeight: "bold" }}>Rounx </span>
         </Typography>
         <TextField
           fullWidth
@@ -107,7 +106,7 @@ export default function SignIn() {
             }}
           />
         </FormControl>
-        <div style={{ margin: "10px 0px" }}>
+        <Box style={{ margin: "10px 0px" }}>
           <Button
             className="normal-text round-button"
             variant="outlined"
@@ -118,14 +117,11 @@ export default function SignIn() {
           <BlueButton type="submit" style={{ float: "right" }}>
             Sign in
           </BlueButton>
-        </div>
+        </Box>
+        <Button className="normal-text round-button" variant="outlined">
+          Create account
+        </Button>
       </CustomForm>
-      <FormControl sx={{ minWidth: "180px" }}>
-        <Select defaultValue="English" value={language} onChange={handleChange}>
-          <MenuItem value="English">English</MenuItem>
-          <MenuItem value="Chinese">Chinese</MenuItem>
-        </Select>
-      </FormControl>
     </FormBox>
   );
 }

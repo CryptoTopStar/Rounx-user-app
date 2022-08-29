@@ -6,6 +6,7 @@ import ForgotPassword from "./ForgotPassword";
 import PrivacyTerms from "./PrivacyTerms";
 import RonuxAdmin from "./RonuxAdmin";
 import SignIn from "./SignIn";
+import SignUp from "./SignUp";
 import UserConsole from "./UserConsole";
 import EmailVerification from "./EmailVerification";
 import ResetPassword from "./ResetPassword";
@@ -45,8 +46,8 @@ export default function Router() {
       element: <EmailVerification />,
     },
     {
-      path: "/reset-password",
-      element: <ResetPassword />,
+      path: "/sign-up",
+      element: <SignUp />,
     },
     {
       path: "/",
