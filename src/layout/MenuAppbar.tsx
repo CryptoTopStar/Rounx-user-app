@@ -42,9 +42,30 @@ export default function MenuAppbar() {
           <Typography
             variant="h6"
             component="div"
-            sx={{ flexGrow: 1, marginLeft: "-5px", marginTop: "2px" }}
+            sx={{ flexGrow: 1, marginLeft: "30px", marginTop: "2px" }}
           >
-            Admin
+            Help
+          </Typography>
+          <Typography
+            variant="h6"
+            component="div"
+            sx={{ marginLeft: "30px", marginTop: "2px" }}
+          >
+            Blog
+          </Typography>
+          <Typography
+            variant="h6"
+            component="div"
+            sx={{ marginLeft: "30px", marginTop: "2px" }}
+          >
+            Contact us
+          </Typography>
+          <Typography
+            variant="h6"
+            component="div"
+            sx={{ marginLeft: "30px", marginTop: "2px" }}
+          >
+            About us
           </Typography>
           {auth && (
             <div>
