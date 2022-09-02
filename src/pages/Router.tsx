@@ -23,6 +23,7 @@ import ReviewFreelancer from "./Review/ReviewFreelancer";
 import JobDetails from "./Review/JobDetails";
 import ReviewReport from "./report/ReviewReport";
 import HomePage from "./homepage/HomePage";
+import PrivacyPolicy from "./homepage/PrivacyPolicy";
 
 function MainLayout() {
   return (
@@ -60,8 +61,8 @@ export default function Router() {
           element: <HomePage />,
         },
         {
-          path: "terms",
-          element: <PrivacyTerms />,
+          path: "privacy",
+          element: <PrivacyPolicy />,
         },
         {
           path: "admins",

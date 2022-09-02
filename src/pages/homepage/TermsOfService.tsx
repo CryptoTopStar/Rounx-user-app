@@ -1,7 +1,7 @@
 import { Box, Typography } from "@mui/material";
 import React from "react";
 
-export default function PrivacyPolicy() {
+export default function TermsOfService() {
   return (
     <Box margin='5% 15%'>
       <Typography>Privacy Policy</Typography>
