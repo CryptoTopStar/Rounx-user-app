@@ -47,9 +47,15 @@ export default function HomePage() {
 
           </Typography>
           <Box>
-            <TextField placeholder="Email"></TextField>
-            <BlueButton></BlueButton>
+            <TextField fullWidth placeholder="Email"></TextField>
+            <BlueButton>Submit</BlueButton>
           </Box>
+        </Box>
+        <Box>
+          <img
+            src="SamsungGalaxy.png" />
+          <img
+            src="GooglePixel.png" />
         </Box>
       </Box>
     </Box>
