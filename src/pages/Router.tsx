@@ -22,6 +22,7 @@ import ReviewID from "./Review/ReviewID";
 import ReviewFreelancer from "./Review/ReviewFreelancer";
 import JobDetails from "./Review/JobDetails";
 import ReviewReport from "./report/ReviewReport";
+import HomePage from "./homepage/HomePage";
 
 function MainLayout() {
   return (
@@ -56,7 +57,7 @@ export default function Router() {
       children: [
         {
           path: "",
-          element: <RonuxAdmin />,
+          element: <HomePage />,
         },
         {
           path: "terms",
