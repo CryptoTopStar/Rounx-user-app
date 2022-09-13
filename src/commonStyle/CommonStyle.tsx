@@ -16,12 +16,13 @@ import {
 } from "@mui/material";
 
 export const DecideButton = styled(Button)(() => ({
-  color: "#336def",
-  textTransform: "none",
+  textTransform: 'none',
+  marginTop: '-10px',
+  borderRadius: '30px',
+  marginBottom: '5px',
+  padding: '8px 15px',
   "&:hover": {
-    borderWidth: "5px 10px",
-    borderRadius: "20px",
-    background: "#ccccff",
+    backgroundColor: 'lightblue'
   },
 }));
 
@@ -47,11 +48,16 @@ export const CustomForm = styled("form")({
 });
 
 export const FormBox = styled(Box)({
-  width: "30%",
-  marginLeft: "35%",
-  alignContent: "center",
-  marginTop: "100px",
+  display: 'flex',
+  justifyContent: 'center',
+  height: '100vh',
+  alignItems: 'center'
+
 });
+
+export const FlexBox = styled(Box)({
+  display: 'flex',
+})
 
 export const TabPanel = (props: any) => {
   const { children, value, index, ...other } = props;
@@ -85,41 +91,28 @@ export const TableBox = styled(Box)(() => ({
 }));
 
 export const CustomModal = (props: any) => {
-  const [open, setOpen] = React.useState(false);
-  const { name, children } = props;
-
-  const handleClickOpen = () => {
-    setOpen(true);
-  };
-  const handleClose = () => {
-    setOpen(false);
-  };
+  const { name, children, onClose } = props;
 
   return (
-    <Box
-      style={{ minWidth: '300px' }}>
-      <MenuItem onClick={handleClickOpen}>
+    <Dialog
+      maxWidth='xs'
+      style={{ width: '100%' }}
+      open={true}
+      onClose={onClose}
+    >
+      <DialogTitle className='dialog-title'>
         {name}
-      </MenuItem>
-      <Dialog
-        style={{ width: '20%', marginLeft: '40%', minWidth: '300px' }}
-        open={open}
-        onClose={handleClose}
-      >
-        <DialogTitle style={{ color: "white", backgroundColor: "#336def" }}>
-          {name}
-        </DialogTitle>
-        {children}
-        <DialogActions>
-          <BlueButton onClick={handleClose} autoFocus>
-            Apply
-          </BlueButton>
-        </DialogActions>
-      </Dialog>
-    </Box>
+      </DialogTitle>
+      {children}
+      <DialogActions>
+        <BlueButton onClick={onClose} autoFocus>
+          Apply
+        </BlueButton>
+      </DialogActions>
+    </Dialog>
   );
 }
-export const MuiChip = styled(Chip)(({ theme }) => ({
+export const MuiChip = styled(Chip)(() => ({
   "&:hover": {
     background: "#ccccff",
   },

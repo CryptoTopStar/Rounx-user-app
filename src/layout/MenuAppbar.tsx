@@ -13,6 +13,7 @@ import Menu from "@mui/material/Menu";
 import Divider from "@mui/material/Divider";
 import { useNavigate } from "react-router-dom";
 import { Button } from "@mui/material";
+import { FlexBox } from "../commonStyle/CommonStyle";
 
 export default function MenuAppbar() {
   const [auth, setAuth] = React.useState(true);
@@ -32,17 +33,18 @@ export default function MenuAppbar() {
       <AppBar position="static">
         <Toolbar>
           <img
-            src="PNG_logo horizontal-05.png"
+            src="/PNG_logo horizontal-05.png"
             alt="Rounx admin"
             width="130px"
             height="70px"
             style={{ cursor: "pointer" }}
             onClick={() => navigate("/")}
           />
+
           <Typography
             variant="h6"
             component="div"
-            sx={{ flexGrow: 1, marginLeft: "30px", marginTop: "2px" }}
+            sx={{ marginLeft: "30px", marginTop: "2px" }}
           >
             Help
           </Typography>
@@ -56,6 +58,7 @@ export default function MenuAppbar() {
           <Typography
             variant="h6"
             component="div"
+            onClick={() => navigate('/contact')}
             sx={{ marginLeft: "30px", marginTop: "2px" }}
           >
             Contact us
@@ -63,12 +66,14 @@ export default function MenuAppbar() {
           <Typography
             variant="h6"
             component="div"
+            onClick={() => navigate('/about')}
             sx={{ marginLeft: "30px", marginTop: "2px" }}
           >
             About us
           </Typography>
+
           {auth && (
-            <div>
+            <div >
               <IconButton
                 size="large"
                 aria-label="account of current user"

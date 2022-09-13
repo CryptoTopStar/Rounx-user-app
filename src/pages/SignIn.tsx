@@ -118,7 +118,7 @@ export default function SignIn() {
             Sign in
           </BlueButton>
         </Box>
-        <Button className="normal-text round-button" variant="outlined">
+        <Button onClick={() => navigate("/sign-up")} className="normal-text round-button" variant="outlined">
           Create account
         </Button>
       </CustomForm>

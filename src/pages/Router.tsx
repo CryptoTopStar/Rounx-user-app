@@ -24,6 +24,10 @@ import JobDetails from "./Review/JobDetails";
 import ReviewReport from "./report/ReviewReport";
 import HomePage from "./homepage/HomePage";
 import PrivacyPolicy from "./homepage/PrivacyPolicy";
+import TermsOfService from "./homepage/TermsOfService";
+import ContactUs from "./homepage/ContacUs";
+import AboutUs from "./homepage/AboutUs";
+import Search from "./Search";
 
 function MainLayout() {
   return (
@@ -65,12 +69,12 @@ export default function Router() {
           element: <PrivacyPolicy />,
         },
         {
-          path: "admins",
-          element: <AdminConsole />,
+          path: "terms",
+          element: <TermsOfService />,
         },
         {
-          path: "users",
-          element: <UserConsole />,
+          path: "contact",
+          element: <ContactUs />,
         },
         {
           path: "/users/client",
@@ -97,8 +101,8 @@ export default function Router() {
           element: <UserActivityLog />
         },
         {
-          path: "/skills",
-          element: <OccupationAndSkills />
+          path: "/about",
+          element: <AboutUs />
         },
         {
           path: "/identities",
@@ -115,6 +119,10 @@ export default function Router() {
         {
           path: "/apply-freelancer",
           element: <Skills />
+        },
+        {
+          path: "/search/freelancers",
+          element: <Search />
         },
       ],
     },

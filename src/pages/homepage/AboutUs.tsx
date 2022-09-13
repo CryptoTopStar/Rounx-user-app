@@ -1,25 +1,27 @@
 import { Box, Typography } from "@mui/material";
 import React from "react";
 
-export default function PrivacyPolicy() {
+export default function AboutUs() {
   return (
     <Box margin='5% 15%'>
-      <Typography>About us</Typography>
-      <Typography>
-        <span>2016-</span>
+      <Typography style={{ fontSize: '24px' }}>About us</Typography>
+      <br />
+      <Typography marginBottom='10px'>
+        <span style={{ fontWeight: 'bold' }}>2016- </span>
         <span>Rounx is founded.</span>
       </Typography>
-      <Typography>
-        <span>2020-</span>
-        <span>Rounx is founded.</span>
+
+      <Typography marginBottom='10px'>
+        <span style={{ fontWeight: 'bold' }}>2020- </span>
+        <span>We have completed the infrastructure of Rounx</span>
       </Typography>
-      <Typography>
-        <span>2021-</span>
-        <span>Rounx is founded.</span>
+      <Typography marginBottom='10px'>
+        <span style={{ fontWeight: 'bold' }}>2021- </span>
+        <span>rounx.com domain name is officially registered.</span>
       </Typography>
-      <Typography>
-        <span>2022-</span>
-        <span>Rounx is founded.</span>
+      <Typography marginBottom='10px'>
+        <span style={{ fontWeight: 'bold' }}>2022- </span>
+        <span>Rounx 1.0 is born and released to the world.</span>
       </Typography>
     </Box>
   )
