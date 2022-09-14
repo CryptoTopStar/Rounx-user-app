@@ -7,20 +7,21 @@ export default function ContactUs() {
       <Typography style={{ fontSize: '24px' }}>Contact us</Typography>
       <br />
       <br />
+
       <Grid container>
-        <Grid item lg={4}>
+        <Grid mb={3} item xs={12} md={12} lg={4}>
           <Box>
             <Typography style={{ fontWeight: 'bold', marginBottom: '10px' }}>Rounx Technology (Dalian) Co., Ltd.</Typography>
             <Typography>Remote Work</Typography>
           </Box>
         </Grid>
-        <Grid item lg={4}>
+        <Grid mb={3} item xs={12} md={12} lg={4}>
           <Box>
             <Typography style={{ fontWeight: 'bold', marginBottom: '10px' }}>Working hours</Typography>
             <Typography>Monday-Friday: 8:00 AM - 5:00 PM UTC+8</Typography>
           </Box>
         </Grid>
-        <Grid item lg={4}>
+        <Grid mb={3} item xs={12} md={12} lg={4}>
           <Box>
             <Typography style={{ fontWeight: 'bold', marginBottom: '10px' }}>Contact details</Typography>
             <Typography>

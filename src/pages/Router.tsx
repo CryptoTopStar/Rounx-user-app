@@ -57,7 +57,6 @@ function SignLayout() {
 export default function Router() {
   const router: RouteObject[] = [
     {
-      path: "/",
       element: <SignLayout />,
       children: [
         {
