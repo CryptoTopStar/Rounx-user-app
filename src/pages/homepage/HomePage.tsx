@@ -82,7 +82,7 @@ export default function HomePage() {
               Our remote work platform will be online soon,Add your email and become the first Rounx user.
             </Typography>
             <br />
-            <Box display='flex'>
+            <Box display='flex' alignItems='center'>
               <TextField fullWidth placeholder="Email" style={{ marginRight: '20px' }}></TextField>
               <BlueButton>Submit</BlueButton>
             </Box>

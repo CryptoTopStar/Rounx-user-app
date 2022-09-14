@@ -179,3 +179,9 @@ export const SeeMoreBox = styled(Box)(() => ({
     backgroundColor: '#cccccc',
   }
 }))
+
+export const TextButton = styled(Typography)(() => ({
+  '&:hover': {
+    cursor: 'pointer',
+  }
+}))

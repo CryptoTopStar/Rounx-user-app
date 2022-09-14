@@ -1,6 +1,5 @@
 import React from "react";
 import { useRoutes, RouteObject, Outlet } from "react-router-dom";
-import MenuAppbar from "../layout/MenuAppbar";
 import AdminConsole from "./AdminConsole";
 import ForgotPassword from "./ForgotPassword";
 import PrivacyTerms from "./PrivacyTerms";
@@ -10,7 +9,6 @@ import SignUp from "./SignUp";
 import Skills from "./freelancer/Skills";
 import UserConsole from "./UserConsole";
 import EmailVerification from "./EmailVerification";
-import ResetPassword from "./ResetPassword";
 import ClientProfile from './profile/ClientProfile';
 import FreelancerProfile from "./profile/Freelancerprofile";
 import BlockedIP from "./blocked/BlockedIP";
@@ -28,12 +26,28 @@ import TermsOfService from "./homepage/TermsOfService";
 import ContactUs from "./homepage/ContacUs";
 import AboutUs from "./homepage/AboutUs";
 import Search from "./Search";
+import AuthGuard from "../components/AuthGuard";
+import Header from "../layout/Header";
+import Footer from "../layout/Footer";
+import Settings from "./settings/PersonalInfo";
+import PersonalInfo from "./settings/PersonalInfo";
 
 function MainLayout() {
   return (
     <>
-      <MenuAppbar />
+      {/* <AuthGuard /> */}
+      <Header />
       <Outlet />
+      <Footer />
+    </>
+  );
+}
+function SignLayout() {
+  return (
+    <>
+      {/* <AuthGuard /> */}
+      <Outlet />
+      <Footer />
     </>
   );
 }
@@ -41,20 +55,26 @@ function MainLayout() {
 export default function Router() {
   const router: RouteObject[] = [
     {
-      path: "/sign-in",
-      element: <SignIn />,
-    },
-    {
-      path: "/forgot-password",
-      element: <ForgotPassword />,
-    },
-    {
-      path: "/verification-email",
-      element: <EmailVerification />,
-    },
-    {
-      path: "/sign-up",
-      element: <SignUp />,
+      path: "/",
+      element: <SignLayout />,
+      children: [
+        {
+          path: "/sign-in",
+          element: <SignIn />,
+        },
+        {
+          path: "/forgot-password",
+          element: <ForgotPassword />,
+        },
+        {
+          path: "/verification-email",
+          element: <EmailVerification />,
+        },
+        {
+          path: "/sign-up",
+          element: <SignUp />,
+        }
+      ]
     },
     {
       path: "/",
@@ -105,8 +125,16 @@ export default function Router() {
           element: <AboutUs />
         },
         {
-          path: "/identities",
-          element: <ReviewID />
+          path: "/settings/personal",
+          element: <PersonalInfo />
+        },
+        {
+          path: "/settings/security",
+          element: <PersonalInfo />
+        },
+        {
+          path: "/settings/currency",
+          element: <PersonalInfo />
         },
         {
           path: "/freelancers",

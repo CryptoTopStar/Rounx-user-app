@@ -13,7 +13,7 @@ import {
   Box,
   Divider
 } from "@mui/material";
-import { BlueButton, CustomForm, FormBox } from "./../commonStyle/CommonStyle";
+import { BlueButton, CustomForm, FlexBox, FormBox } from "./../commonStyle/CommonStyle";
 import { Visibility, VisibilityOff } from "@mui/icons-material";
 import { useNavigate } from "react-router-dom";
 
@@ -82,10 +82,10 @@ export default function SignUp() {
           <span style={{ fontWeight: "bold" }}>Rounx </span>
           <span>account </span>
         </Typography>
-        <Box>
-          <TextField label="First name" />
-          <TextField label="Last name" style={{ float: 'right' }} />
-        </Box>
+        <FlexBox sx={{ justifyContent: 'space-between' }} >
+          <TextField label="First name" sx={{ mr: 2 }} />
+          <TextField label="Last name" />
+        </FlexBox>
         <TextField label="Birthday" />
         <TextField label="Country/Region" />
         <Divider />
@@ -100,8 +100,9 @@ export default function SignUp() {
           helperText={formik.touched.email && formik.errors.email}
         />
         <TextField label="Enter code" />
-        <Box>
+        <FlexBox sx={{ justifyContent: 'space-between' }}>
           <TextField
+            sx={{ mr: 2 }}
             id="password"
             name="password"
             label="Set password"
@@ -135,7 +136,7 @@ export default function SignUp() {
             error={formik.touched.confirmPwd && Boolean(formik.errors.confirmPwd)}
             helperText={formik.touched.confirmPwd && formik.errors.confirmPwd}
           />
-        </Box>
+        </FlexBox>
 
         <Box style={{ margin: "10px 0px", display: 'flex', justifyContent: 'flex-end' }}>
           <Button
@@ -149,12 +150,6 @@ export default function SignUp() {
           </BlueButton>
         </Box>
       </CustomForm>
-      <FormControl sx={{ minWidth: "180px" }}>
-        <Select defaultValue="English" value={language} onChange={handleChange}>
-          <MenuItem value="English">English</MenuItem>
-          <MenuItem value="Chinese">Chinese</MenuItem>
-        </Select>
-      </FormControl>
     </FormBox>
   );
 }

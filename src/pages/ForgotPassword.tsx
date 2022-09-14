@@ -61,91 +61,88 @@ export default function ForgotPassword() {
 
   return (
     <FormBox>
-      <CustomForm onSubmit={formik.handleSubmit}>
-        <img
-          src="logo.png"
-          alt="Rounx admin"
-          width="90px"
-          height="90px"
-          style={{ color: "#336def", alignSelf: "center" }}
-        />
-        <Typography
-          style={{
-            fontSize: "20px",
-            textAlign: "center",
-            marginTop: "-10px",
-            marginBottom: "20px",
-          }}
-        >
-          Reset Password
-        </Typography>
-        <TextField
-          fullWidth
-          id="email"
-          name="email"
-          label="Email"
-          value={formik.values.email}
-          onChange={formik.handleChange}
-          error={formik.touched.email && Boolean(formik.errors.email)}
-          helperText={formik.touched.email && formik.errors.email}
-        />
-        <TextField label="Enter code" />
-        <Box>
-          <TextField
-
-            id="password"
-            name="password"
-            label="Set password"
-            type={showPassword ? "text" : "password"}
-            value={formik.values.password}
-            onChange={formik.handleChange}
-            helperText={"At least 8 characters"}
-            error={formik.touched.password && Boolean(formik.errors.password)}
-            InputProps={{
-              endAdornment: (
-                <InputAdornment position="end">
-                  <IconButton
-                    aria-label="toggle password visibility"
-                    onClick={handleClickShowPassword}
-                    edge="end"
-                  >
-                    {showPassword ? <VisibilityOff /> : <Visibility />}
-                  </IconButton>
-                </InputAdornment>
-              ),
+      <Box>
+        <CustomForm onSubmit={formik.handleSubmit}>
+          <img
+            src="logo.png"
+            alt="Rounx admin"
+            width="90px"
+            height="90px"
+            style={{ color: "#336def", alignSelf: "center" }}
+          />
+          <Typography
+            style={{
+              fontSize: "20px",
+              textAlign: "center",
+              marginTop: "-10px",
+              marginBottom: "20px",
             }}
-          />
-          <TextField
-            style={{ float: 'right' }}
-            id="confirmPwd"
-            name="confirmPwd"
-            type="password"
-            label="Confirm password"
-            value={formik.values.confirmPwd}
-            onChange={formik.handleChange}
-            error={formik.touched.confirmPwd && Boolean(formik.errors.confirmPwd)}
-            helperText={formik.touched.confirmPwd && formik.errors.confirmPwd}
-          />
-        </Box>
-
-        <Box style={{ margin: "10px 0px", display: 'flex', justifyContent: 'flex-end' }}>
-          <Button
-            className="normal-text round-button"
-            onClick={() => navigate("/forgot-password")}
           >
-            Send code
-          </Button>
-          <BlueButton type="submit" style={{ float: "right" }}>
-            Next
-          </BlueButton>
-        </Box>
-      </CustomForm>
-      <FormControl sx={{ minWidth: "180px" }}>
-        <Select defaultValue="English" value={language} onChange={handleChange}>
-          <MenuItem value="English">English</MenuItem>
-          <MenuItem value="Chinese">Chinese</MenuItem>
-        </Select>
-      </FormControl>
+            Reset Password
+          </Typography>
+          <TextField
+            fullWidth
+            id="email"
+            name="email"
+            label="Email"
+            value={formik.values.email}
+            onChange={formik.handleChange}
+            error={formik.touched.email && Boolean(formik.errors.email)}
+            helperText={formik.touched.email && formik.errors.email}
+          />
+          <TextField label="Enter code" />
+          <Box display='flex' justifyContent='space-between' >
+            <TextField
+              sx={{ mr: 2 }}
+              id="password"
+              name="password"
+              label="Set password"
+              type={showPassword ? "text" : "password"}
+              value={formik.values.password}
+              onChange={formik.handleChange}
+              helperText={"At least 8 characters"}
+              error={formik.touched.password && Boolean(formik.errors.password)}
+              InputProps={{
+                endAdornment: (
+                  <InputAdornment position="end">
+                    <IconButton
+                      aria-label="toggle password visibility"
+                      onClick={handleClickShowPassword}
+                      edge="end"
+                    >
+                      {showPassword ? <VisibilityOff /> : <Visibility />}
+                    </IconButton>
+                  </InputAdornment>
+                ),
+              }}
+            />
+            <TextField
+              id="confirmPwd"
+              name="confirmPwd"
+              type="password"
+              label="Confirm password"
+              value={formik.values.confirmPwd}
+              onChange={formik.handleChange}
+              error={formik.touched.confirmPwd && Boolean(formik.errors.confirmPwd)}
+              helperText={formik.touched.confirmPwd && formik.errors.confirmPwd}
+            />
+          </Box>
+
+          <Box style={{ margin: "10px 0px", display: 'flex', justifyContent: 'flex-end', alignItems: 'center' }}>
+            <Button
+              sx={{ mr: 2 }}
+              className="normal-text round-button"
+              onClick={() => navigate("/forgot-password")}
+            >
+              Send code
+            </Button>
+            <BlueButton type="submit">
+              Next
+            </BlueButton>
+          </Box>
+        </CustomForm>
+      </Box>
+
     </FormBox>
   );
 }
