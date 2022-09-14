@@ -4,7 +4,7 @@ import { BlueButton } from "../../commonStyle/CommonStyle";
 
 export default function Security() {
     return (
-        <Paper sx={{ padding: 3, pr: '20%' }}>
+        <Paper sx={{ padding: 3, pr: '20%', mt: 8 }}>
             <Box id="account email">
                 <Typography fontSize='20px'>
                     Change Password
@@ -14,8 +14,14 @@ export default function Security() {
                 </Typography>
                 <br />
                 <TextField fullWidth label="Current password"></TextField>
+                <br />
+                <br />
                 <TextField fullWidth label="New password"></TextField>
+                <br />
+                <br />
                 <TextField fullWidth label="Confirm password"></TextField>
+                <br />
+                <br />
                 <BlueButton>Change password</BlueButton>
             </Box>
             <br />
@@ -24,11 +30,11 @@ export default function Security() {
                 <Typography fontSize='20px'>
                     Recovery email
                 </Typography>
-                <Typography color='#757575' mt={1} fontSize='14px'>
-                    Last change time:2018-02-25
-                </Typography>
+                <br />
                 <TextField fullWidth helperText="If your Rounx account becomes inaccessible, you can reset your password from this email address" label="Recovery email"></TextField>
-                <BlueButton>Delete email</BlueButton>
+                <br />
+                <br />
+                <BlueButton sx={{ mr: 2 }}>Delete email</BlueButton>
                 <BlueButton>Change email</BlueButton>
             </Box>
         </Paper>

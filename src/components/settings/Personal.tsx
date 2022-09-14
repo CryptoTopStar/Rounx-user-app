@@ -4,7 +4,7 @@ import { BlueButton } from "../../commonStyle/CommonStyle";
 
 export default function Personal() {
     return (
-        <Paper sx={{ padding: 3, pr: '20%' }}>
+        <Paper sx={{ padding: 3, pr: '20%', mt: 8 }}>
             <Box id="account email">
                 <Typography fontSize='20px'>
                     Account email

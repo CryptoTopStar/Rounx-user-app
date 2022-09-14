@@ -4,7 +4,7 @@ import { BlueButton } from "../../commonStyle/CommonStyle";
 
 export default function Currency() {
     return (
-        <Paper sx={{ padding: 3, pr: '20%' }}>
+        <Paper sx={{ padding: 3, pr: '20%', mt: 8 }}>
             <Typography fontSize='20px'>
                 Select currency
             </Typography>

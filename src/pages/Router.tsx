@@ -29,8 +29,10 @@ import Search from "./Search";
 import AuthGuard from "../components/AuthGuard";
 import Header from "../layout/Header";
 import Footer from "../layout/Footer";
-import Settings from "./settings/PersonalInfo";
-import PersonalInfo from "./settings/PersonalInfo";
+import Settings from "./settings";
+import Personal from "../components/settings/Personal";
+import Security from "../components/settings/Security";
+import Currency from "../components/settings/Currency";
 
 function MainLayout() {
   return (
@@ -125,16 +127,22 @@ export default function Router() {
           element: <AboutUs />
         },
         {
-          path: "/settings/personal",
-          element: <PersonalInfo />
-        },
-        {
-          path: "/settings/security",
-          element: <PersonalInfo />
-        },
-        {
-          path: "/settings/currency",
-          element: <PersonalInfo />
+          path: "/settings",
+          element: <Settings />,
+          children: [
+            {
+              path: "personal",
+              element: <Personal />,
+            },
+            {
+              path: "security",
+              element: <Security />,
+            },
+            {
+              path: "currency",
+              element: <Currency />,
+            }
+          ]
         },
         {
           path: "/freelancers",
