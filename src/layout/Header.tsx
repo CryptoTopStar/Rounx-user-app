@@ -30,29 +30,37 @@ export default function Header() {
 
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static">
-        <Toolbar>
+      <AppBar variant="outlined" sx={{ background: '#757575' }} position="static">
+        <Toolbar sx={{ backgroundColor: "#ffffff" }}>
           <img
-            src="/PNG_logo horizontal-05.png"
+            src="/logo.png"
             alt="Rounx admin"
-            width="130px"
-            height="70px"
+            width="40px"
+            height="40px"
             style={{ cursor: "pointer" }}
             onClick={() => navigate("/")}
           />
+          <Typography
+            variant="h6"
+            component="div"
+            onClick={() => navigate("/")}
+            sx={{ cursor: "pointer", fontSize: '30px', marginLeft: "10px", marginRight: '10px', marginTop: "2px", color: '#000000' }}
+          >
+            Rounx
+          </Typography>
           <Box sx={{ flexGrow: 1, display: 'flex' }}>
             {pages.map((page) => (
               <Button
                 key={page.name}
                 onClick={() => navigate(`${page.url}`)}
-                sx={{ my: 2, color: 'white', display: 'block', textTransform: 'none' }}>
+                sx={{ my: 2, mr: 1, color: '#000000', display: 'block', textTransform: 'none' }}>
                 {page.name}
               </Button>
             ))}
           </Box>
-          <Box sx={{ flexGrow: 0 }}>
-            <TextField label="Search freelancers"
-              InputProps={{ startAdornment: <InputAdornment position="start"><SearchIcon /></InputAdornment> }} />
+          <Box sx={{ flexGrow: 0, display: 'flex', alignItems: 'center' }}>
+            <TextField placeholder="Search freelancers"
+              InputProps={{ sx: { height: 40, borderRadius: '20px' }, startAdornment: <InputAdornment position="start"><SearchIcon /></InputAdornment> }} />
             <IconButton
               size="large"
               aria-label="account of current user"
@@ -61,7 +69,7 @@ export default function Header() {
               onClick={handleMenu}
               color="inherit"
             >
-              <AccountCircle style={{ width: "30px", height: "30px" }} />
+              <AccountCircle style={{ width: "40px", height: "40px", color: '#757575' }} />
             </IconButton>
             <Menu
               id="menu-appbar"
